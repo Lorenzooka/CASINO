@@ -1,0 +1,9 @@
+rules:
+  - id: no-secrets-in-code
+    patterns:
+      - pattern: $SECRET
+      - pattern-not: |
+          // ok: test
+    message: "Potential secret in code"
+    severity: WARNING
+    languages: [js,ts,sol]
